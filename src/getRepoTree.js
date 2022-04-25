@@ -1,6 +1,7 @@
 const axios = require('axios');
 
-async function getRepoContentsByPath(owner, repository, path = '') {const {data} = await axios.get(`https://api.github.com/repos/${owner}/${repository}/contents/${path}`);
+async function getRepoContentsByPath(owner, repository, path = '') {
+    const {data} = await axios.get(`https://api.github.com/repos/${owner}/${repository}/contents/${path}`);
     const fileSystem = {}, dirRequests = [];
 
     data.forEach(item => {
