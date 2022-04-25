@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "name": "fibo",
+  "description": "\"# Github-Public-Repository-Exercise\"",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rom5995/Github-Public-Repository-Exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rom5995/Github-Public-Repository-Exercise/issues"
+  },
+  "homepage": "https://github.com/rom5995/Github-Public-Repository-Exercise#readme"
+}

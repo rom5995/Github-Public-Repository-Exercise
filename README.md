@@ -1,1 +1,1 @@
-"# Github-Public-Repository-Exercise" 
+Github-Public-Repository-Exercise 
