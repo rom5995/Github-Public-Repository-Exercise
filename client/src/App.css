@@ -1,0 +1,17 @@
+.app {
+  padding: 15px;
+}
+
+.topTable {
+  width: 100%;
+  table-layout: fixed;
+}
+
+label {
+  margin: 5px;
+  margin-right: 15px;
+}
+
+.submitRow {
+  text-align: center;
+}

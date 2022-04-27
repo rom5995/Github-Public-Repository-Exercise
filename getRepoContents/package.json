@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "aws-sdk": "^2.1122.0",
     "axios": "^0.26.1"
   },
   "name": "fibo",

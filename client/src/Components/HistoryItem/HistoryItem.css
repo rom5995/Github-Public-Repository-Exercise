@@ -1,0 +1,8 @@
+.historyItem div:hover{
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+.historyItem {
+    list-style: none;
+}
