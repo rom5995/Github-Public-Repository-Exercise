@@ -15,10 +15,10 @@ function App() {
   const [loadingHistory, setLoadingHistory] = useState(true);
 
   const onSubmit = async ({owner, repository}) => {
-    setErrorMessage(undefined);
+    setErrorMessage(null);
 
     try {
-      setRepoTree(undefined);
+      setRepoTree(null);
       setLoadingRepo(true);
       const {data} = await RepoService.getRepo(owner, repository);
 

@@ -1,4 +1,5 @@
 const axios = require('axios');
+axios.defaults.headers.common['Authorization'] = process.env.GITHUB_TOKEN;
 
 async function getRepoContentsByPath(owner, repository, path = '') {
     const {data} = await axios.get(`https://api.github.com/repos/${owner}/${repository}/contents/${path}`);
@@ -24,6 +25,4 @@ async function getRepoContentsByPath(owner, repository, path = '') {
     }
 }
 
-module.exports = {
-    getRepoContentsByPath
-}
+exports.getRepoContentsByPath = getRepoContentsByPath;

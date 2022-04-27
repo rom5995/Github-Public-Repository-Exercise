@@ -4,13 +4,12 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 
 const TABLE_NAME = "repositories";
 
-async function getRepoHistory() {
+exports.getRepoHistory = async function() {
     try {
         const query = {
             TableName: TABLE_NAME,
             ProjectionExpression: "id"
         };
-        console.log("try to get from db");
 
         const response = await docClient.scan(query).promise();
         if (response?.Items && response?.Count > 0) {
@@ -21,8 +20,4 @@ async function getRepoHistory() {
     } catch (error) {
         console.log("error on get list of repos from DB", error);
     }
-}
-
-module.exports = {
-    getRepoHistory
 }

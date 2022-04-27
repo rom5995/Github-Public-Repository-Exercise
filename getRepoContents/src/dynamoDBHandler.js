@@ -8,7 +8,7 @@ function generateId(owner, repository) {
     return `${owner}_${repository}`
 }
 
-async function saveRepo(owner, repository, tree) {
+exports.saveRepo = async function(owner, repository, tree) {
     try {
         const repoItem = {
             TableName: TABLE_NAME,
@@ -17,7 +17,6 @@ async function saveRepo(owner, repository, tree) {
                 tree: JSON.stringify(tree)
             }
         }
-        console.log("save to DB");
         await docClient.put(repoItem).promise();
         console.log(`${repoItem.Item.id} saved successfully`);
     } catch (error) {
@@ -25,7 +24,7 @@ async function saveRepo(owner, repository, tree) {
     }
 }
 
-async function getRepoDB(owner, repository) {
+exports.getRepoDB = async function(owner, repository) {
     try {
         const query = {
             TableName: TABLE_NAME,
@@ -33,7 +32,6 @@ async function getRepoDB(owner, repository) {
                 id: generateId(owner, repository)
             }
         };
-        console.log("try to get from db");
 
         const response = await docClient.get(query).promise();
         if (response?.Item?.tree) {
@@ -44,9 +42,4 @@ async function getRepoDB(owner, repository) {
     } catch (error) {
         console.log("error on get repo from DB", error);
     }
-}
-
-module.exports = {
-    saveRepo,
-    getRepoDB
 }
